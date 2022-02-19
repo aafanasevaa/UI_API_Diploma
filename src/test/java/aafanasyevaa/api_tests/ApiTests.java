@@ -43,7 +43,6 @@ public class ApiTests {
                         .spec(responseSpec)
                         .log().body()
                         .extract().as(LombokUserData.class);
-
         assertEquals(email, data.getUser().getEmail());
     }
 }

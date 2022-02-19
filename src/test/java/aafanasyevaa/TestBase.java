@@ -1,38 +1,29 @@
 package aafanasyevaa;
 
 import aafanasyevaa.helpers.Attach;
-import com.codeborne.selenide.Configuration;
+import aafanasyevaa.helpers.DriverSettings;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.CredentialsConfig;
+import io.qameta.allure.junit5.AllureJunit5;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-import static java.lang.String.format;
-
+@ExtendWith({AllureJunit5.class})
 public class TestBase {
     @BeforeAll
-    static void doBeforeAll() {
+    static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.startMaximized = true;
-        CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
-        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
-        Configuration.remote = format("https://%s:%s@%s", credentials.login(), credentials.password(), url);
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
+        DriverSettings.configure();
     }
 
     @AfterEach
-    public void doAfterEach() {
+    public void tearDown() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        Selenide.closeWebDriver();
     }
 }

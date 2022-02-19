@@ -14,7 +14,7 @@ public interface ProjectConfig extends Config {
     @Config.Key("browser")
     String browser();
 
-    @Config.DefaultValue("91.0")
+    @Config.DefaultValue("95.0")
     @Config.Key("browserVersion")
     String browserVersion();
 
@@ -23,16 +23,9 @@ public interface ProjectConfig extends Config {
     String browserSize();
 
     @Config.DefaultValue("")
-    @Config.Key("remoteDriverUrl")
-    String remoteDriverUrl();
+    @Config.Key("remoteUrl")
+    String remoteUrl();
 
     @Config.Key("videoStorage")
     String videoStorage();
-
-    @Config.Key("accountPassword")
-    String accountPassword();
-
-    @Config.DefaultValue("https://sdo-oib-test.it2g.ru/")
-    @Config.Key("baseUrl")
-    String baseUrl();
 }
