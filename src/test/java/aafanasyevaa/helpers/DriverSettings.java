@@ -1,6 +1,6 @@
 package aafanasyevaa.helpers;
 import com.codeborne.selenide.Configuration;
-import config.Project;
+import aafanasyevaa.config.Project;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 

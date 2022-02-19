@@ -1,4 +1,4 @@
-package config;
+package aafanasyevaa.config;
 
 import org.aeonbits.owner.ConfigFactory;
 

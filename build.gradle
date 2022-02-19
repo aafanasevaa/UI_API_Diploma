@@ -54,8 +54,8 @@ tasks.withType(Test) {
                 'junit.jupiter.execution.parallel.enabled'                 : true,
                 'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
                 'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+                'junit.jupiter.execution.parallel.aafanasyevaa.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.aafanasyevaa.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
     }
 }
