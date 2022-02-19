@@ -1,4 +1,4 @@
-package aafanasyevaa.lombok;
+package aafanasyevaa.api.lombok;
 
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -7,5 +7,5 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     private String email;
-    private String password;
+    private String name;
 }

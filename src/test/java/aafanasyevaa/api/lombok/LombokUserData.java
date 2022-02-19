@@ -1,4 +1,4 @@
-package aafanasyevaa.lombok;
+package aafanasyevaa.api.lombok;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

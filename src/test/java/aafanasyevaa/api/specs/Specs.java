@@ -1,4 +1,4 @@
-package aafanasyevaa.specs;
+package aafanasyevaa.api.specs;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
