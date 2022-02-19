@@ -35,7 +35,6 @@ public class ApiTests extends ApiTestData {
     @Test
     @DisplayName("SINGLE USER")
     public void SingleUserTest() {
-
         LombokUserData data =
                 given()
                         .spec(requestSpec)
@@ -51,7 +50,6 @@ public class ApiTests extends ApiTestData {
     @Test
     @DisplayName("LOGIN - SUCCESSFUL")
     void loginSuccessful() {
-
         given()
                 .spec(requestSpec)
                 .contentType(JSON)
@@ -67,7 +65,6 @@ public class ApiTests extends ApiTestData {
     @Test
     @DisplayName("DELAYED RESPONSE")
     void delayedResponse() {
-
         ArrayList response = RestAssured
                 .given()
                 .spec(requestSpec)
@@ -85,8 +82,6 @@ public class ApiTests extends ApiTestData {
     @Test
     @DisplayName("UPDATE")
     public void updateTest() {
-
-        String expectedResponse = "morpheus";
         String response = RestAssured
                 .given()
                 .spec(requestSpec)
