@@ -1,4 +1,4 @@
-package aafanasyevaa.ui.tests;
+package aafanasyevaa;
 
 import aafanasyevaa.helpers.Attach;
 import aafanasyevaa.helpers.DriverSettings;
