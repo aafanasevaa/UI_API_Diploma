@@ -15,10 +15,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import static io.restassured.RestAssured.given;
 
-public class ApiTests {
+public class ApiTests extends ApiTestData {
 
     @Test
     @DisplayName("LIST <RESOURCE>")
@@ -37,8 +36,6 @@ public class ApiTests {
     @DisplayName("SINGLE USER")
     public void SingleUserTest() {
 
-        String email = "janet.weaver@reqres.in";
-
         LombokUserData data =
                 given()
                         .spec(requestSpec)
@@ -55,31 +52,29 @@ public class ApiTests {
     @DisplayName("LOGIN - SUCCESSFUL")
     void loginSuccessful() {
 
-        String data = "{\"email\": \"eve.holt@reqres.in\",\"password\": \"pistol\" }";
         given()
                 .spec(requestSpec)
                 .contentType(JSON)
-                .body(data)
+                .body(loginData)
                 .when()
                 .post("/login")
                 .then()
                 .spec(responseSpec)
                 .log().all()
-                .body("token", is("QpwL5tke4Pnpja7X4"));
+                .body("token", is(expectedToken));
     }
 
     @Test
     @DisplayName("DELAYED RESPONSE")
     void delayedResponse() {
 
-        String responseData = "{ \"id\": 6, \"email\": \"tracey.ramos@reqres.in\", \"first_name\": \"Tracey\", \"last_name\": \"Ramos\", \"avatar\": \"https://reqres.in/img/faces/6-image.jpg\" }";
         ArrayList response = RestAssured
                 .given()
                 .spec(requestSpec)
                 .contentType(JSON)
                 .queryParams("delay", 3)
                 .when()
-                .put("users")
+                .get("users")
                 .then()
                 .spec(responseSpec)
                 .log().all()
@@ -91,14 +86,13 @@ public class ApiTests {
     @DisplayName("UPDATE")
     public void updateTest() {
 
-        String data = "{ \"name\": \"morpheus\", \"job\": \"zion resident\" }";
         String expectedResponse = "morpheus";
         String response = RestAssured
                 .given()
                 .spec(requestSpec)
                 .log().all()
                 .contentType(JSON)
-                .body(data)
+                .body(updateData)
                 .when()
                 .put("/users/2")
                 .then()
