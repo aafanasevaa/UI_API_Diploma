@@ -10,20 +10,20 @@ import org.aeonbits.owner.Config;
 })
 
 public interface ProjectConfig extends Config {
-    @Config.DefaultValue("chrome")
     @Config.Key("browser")
+    @Config.DefaultValue("chrome")
     String browser();
 
-    @Config.DefaultValue("95.0")
     @Config.Key("browserVersion")
+    @Config.DefaultValue("95.0")
     String browserVersion();
 
-    @Config.DefaultValue("1920x1080")
     @Config.Key("browserSize")
+    @Config.DefaultValue("1920x1080")
     String browserSize();
 
-    @Config.DefaultValue("")
     @Config.Key("remoteUrl")
+    @Config.DefaultValue("")
     String remoteUrl();
 
     @Config.Key("videoStorage")

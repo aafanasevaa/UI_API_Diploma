@@ -1,4 +1,4 @@
-package aafanasyevaa.api_tests;
+package aafanasyevaa.api;
 
 import aafanasyevaa.lombok.LombokUserData;
 
