@@ -31,7 +31,9 @@ public interface ProjectConfig extends Config {
     @Config.Key("videoStorage")
     String videoStorage();
 
+    @Key("login")
     String login();
 
+    @Key("password")
     String password();
 }
