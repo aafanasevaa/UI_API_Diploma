@@ -7,15 +7,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import aafanasyevaa.ui.pages.ReqresIn;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class UiTests extends UiTestData {
+
+    public ReqresIn reqresIn = new ReqresIn();
 
     @Test
     @DisplayName("Check the header on main page of the website")
@@ -28,7 +28,7 @@ public class UiTests extends UiTestData {
             open(url);
         });
         step("Find the header of the page", () -> {
-            $(".tagline").shouldHave(text("Test your front-end against a real API"));
+           reqresIn.checkHeader();
         });
     }
 
@@ -43,10 +43,10 @@ public class UiTests extends UiTestData {
             open(url);
         });
         step("Click the support button", () -> {
-            $(byText("Support ReqRes")).click();
+            reqresIn.clickSupportButton();
         });
         step("Check if support page is open", () -> {
-            $("#support-heading").shouldHave(text("Support"));
+            reqresIn.checkSupportPage();
         });
     }
 
@@ -63,10 +63,10 @@ public class UiTests extends UiTestData {
             open(url);
         });
         step("Set sum in the input field", () -> {
-            $("[type=number]").setValue(inputQuery).pressEnter();
+            reqresIn.setSumInput(inputQuery);
         });
         step("Check if the sum is displayed in the opened page", () -> {
-            $(".ProductSummary").shouldHave(text(inputQuery + ",00 $"));
+            reqresIn.checkNewPage(inputQuery);
         });
     }
 
@@ -81,10 +81,10 @@ public class UiTests extends UiTestData {
             open(url);
         });
         step("Click on DELETE request in the list of request examples", () -> {
-            $("[data-id=delete]").click();
+            reqresIn.clickDeleteRequestButton();
         });
         step("Check if 204 status code is displayed in response field", () -> {
-            $(".response").shouldHave(text("204"));
+            reqresIn.checkResponseStatusCode();
         });
     }
 
