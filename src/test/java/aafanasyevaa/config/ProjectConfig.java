@@ -5,28 +5,29 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/remote.properties",
+        "classpath:config/env.properties"
 })
-
 public interface ProjectConfig extends Config {
 
-    @Config.Key("browser")
-    @Config.DefaultValue("chrome")
+    @Key("baseUrl")
+    @DefaultValue("https://reqres.in/")
+    String baseUrl();
+
+    @DefaultValue("chrome")
     String browser();
 
-    @Config.Key("browserVersion")
-    @Config.DefaultValue("95.0")
+    @DefaultValue("91.0")
     String browserVersion();
 
-    @Config.Key("browserSize")
-    @Config.DefaultValue("1920x1080")
+    @DefaultValue("1920x1080")
     String browserSize();
 
-    @Config.Key("remoteUrl")
-    @Config.DefaultValue("")
+    @Key("remoteUrl")
+    @DefaultValue("")
     String remoteUrl();
 
-    @Config.Key("videoStorage")
+    @Key("videoStorage")
+    @DefaultValue("")
     String videoStorage();
 
     @Key("login")

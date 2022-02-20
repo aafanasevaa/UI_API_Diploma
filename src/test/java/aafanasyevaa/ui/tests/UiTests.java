@@ -25,7 +25,7 @@ public class UiTests extends UiTestData {
     @Severity(SeverityLevel.BLOCKER)
     public void checkHeaderTest() {
         step("Open main page of the website", () -> {
-            open(url);
+            open("https://reqres.in/");
         });
         step("Find the header of the page", () -> {
             $(".tagline").shouldHave(text("Test your front-end against a real API"));

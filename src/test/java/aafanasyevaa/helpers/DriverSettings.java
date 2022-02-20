@@ -9,12 +9,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DriverSettings {
 
-    public static ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+    public static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 
     public static void configure() {
         Configuration.browser = config.browser();
         Configuration.browserVersion = config.browserVersion();
         Configuration.browserSize = config.browserSize();
+        Configuration.baseUrl = config.baseUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
