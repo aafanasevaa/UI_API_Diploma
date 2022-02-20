@@ -2,7 +2,6 @@ package aafanasyevaa;
 
 import aafanasyevaa.helpers.Attach;
 import aafanasyevaa.helpers.DriverSettings;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.junit5.AllureJunit5;
