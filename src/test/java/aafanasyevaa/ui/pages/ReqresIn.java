@@ -36,10 +36,12 @@ public class ReqresIn {
         sumInput.setValue(inputQuery).pressEnter();
         return this;
     }
+
     public ReqresIn checkNewPage(String inputQuery) {
         supportHeader.shouldHave(text(inputQuery + ",00 $"));
         return this;
     }
+
     public ReqresIn clickDeleteRequestButton() {
         deleteRequestButton.click();
         return this;

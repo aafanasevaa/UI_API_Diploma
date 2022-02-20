@@ -7,15 +7,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import aafanasyevaa.ui.pages.ReqresIn;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class UiTests extends UiTestData {
-
-    public ReqresIn reqresIn = new ReqresIn();
 
     @Test
     @DisplayName("Check the header on main page of the website")
@@ -28,7 +25,7 @@ public class UiTests extends UiTestData {
             open(url);
         });
         step("Find the header of the page", () -> {
-           reqresIn.checkHeader();
+            reqresIn.checkHeader();
         });
     }
 
@@ -105,3 +102,4 @@ public class UiTests extends UiTestData {
         });
     }
 }
+
