@@ -2,6 +2,7 @@ package aafanasyevaa;
 
 import aafanasyevaa.helpers.Attach;
 import aafanasyevaa.helpers.DriverSettings;
+import aafanasyevaa.ui.pages.ReqresIn;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.junit5.AllureJunit5;
@@ -12,6 +13,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
+
+    public ReqresIn reqresIn = new ReqresIn();
 
     @BeforeAll
     static void setup() {
