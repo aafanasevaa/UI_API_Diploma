@@ -1,5 +1,5 @@
 package aafanasyevaa.ui.tests;
-import aafanasyevaa.TestBase;
+import aafanasyevaa.ui.TestBase;
 
 public class UiTestData extends TestBase {
     public String url = "https://reqres.in/";

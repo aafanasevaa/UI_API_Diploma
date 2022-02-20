@@ -1,4 +1,4 @@
-package aafanasyevaa;
+package aafanasyevaa.ui;
 
 import aafanasyevaa.helpers.Attach;
 import aafanasyevaa.helpers.DriverSettings;
