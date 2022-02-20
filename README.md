@@ -30,14 +30,14 @@
 ![image](https://user-images.githubusercontent.com/93313607/154846120-3fab91b8-d615-432c-886c-2af9667fafe9.png)
 
 ## :bar_chart: Integration with Alure TestOps
-*In Allure TestOps you can check detailed information about test results*
+*Allure TestOps allows you to check detailed information about test results*
 ![image](https://user-images.githubusercontent.com/93313607/154846211-21701fc9-54a2-463a-beef-f5f9bb951cd9.png)
 ![image](https://user-images.githubusercontent.com/93313607/154846230-9438c61c-7c07-45d9-86be-b3b24d56a220.png)
 ![image](https://user-images.githubusercontent.com/93313607/154846271-e6b01ec8-04c7-4210-8d08-2f7604151103.png)
 
 ***
 ## :toolbox: Integration with Jira
-*Integration with Jira is also configured*
+*Jira integration is enabled as well*
 ![image](https://user-images.githubusercontent.com/93313607/154846644-4aedf64b-24bc-4e06-9733-f29c4d16f5c2.png)
 
 ***
