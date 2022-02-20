@@ -39,9 +39,9 @@ public class UiTests extends UiTestData {
     @Story("ReqresIn UI")
     @Severity(SeverityLevel.NORMAL)
     public void checkSupportButtonTest() {
-        step("Open main page of the website", () -> {
-            open(url);
-        });
+//        step("Open main page of the website", () -> {
+//            open(url);
+//        });
         step("Click the support button", () -> {
             $(byText("Support ReqRes")).click();
         });
