@@ -9,10 +9,6 @@ import org.aeonbits.owner.Config;
 })
 public interface ProjectConfig extends Config {
 
-    @Key("baseUrl")
-    @DefaultValue("https://reqres.in/")
-    String baseUrl();
-
     @DefaultValue("chrome")
     String browser();
 
