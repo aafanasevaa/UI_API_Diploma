@@ -6,10 +6,12 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "system:properties",
         "classpath:config/local.properties",
-        "classpath:config/remote.properties"
+        "classpath:config/remote.properties",
+        "classpath:config/credentials.properties"
 })
 
 public interface ProjectConfig extends Config {
+
     @Config.Key("browser")
     @Config.DefaultValue("chrome")
     String browser();
@@ -28,4 +30,8 @@ public interface ProjectConfig extends Config {
 
     @Config.Key("videoStorage")
     String videoStorage();
+
+    String login();
+
+    String password();
 }

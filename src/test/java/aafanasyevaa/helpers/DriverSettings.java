@@ -1,15 +1,25 @@
 package aafanasyevaa.helpers;
+import aafanasyevaa.config.ProjectConfig;
 import com.codeborne.selenide.Configuration;
 import aafanasyevaa.config.Project;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static java.lang.String.format;
+
 public class DriverSettings {
 
+    public static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+
     public static void configure() {
-        Configuration.browser = Project.config.browser();
-        Configuration.browserVersion = Project.config.browserVersion();
-        Configuration.browserSize = Project.config.browserSize();
+        Configuration.browser = config.browser();
+        Configuration.browserVersion = config.browserVersion();
+        Configuration.browserSize = config.browserSize();
+
+        ProjectConfig credentials = ConfigFactory.create(ProjectConfig.class);
+        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
+        Configuration.remote = format("https://%s:%s@%s", credentials.login(), credentials.password(), url);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -24,9 +34,8 @@ public class DriverSettings {
         if (Project.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
-            Configuration.remote = Project.config.remoteUrl();
+            Configuration.remote = String.format(config.remoteUrl(), config.login(), config.password());
         }
-
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         Configuration.browserCapabilities = capabilities;
     }

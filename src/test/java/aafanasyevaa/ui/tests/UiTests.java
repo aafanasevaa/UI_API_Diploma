@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class UiTests {
+public class UiTests extends UiTestData {
 
     @Test
     @DisplayName("Check the header on main page of the website")
@@ -25,7 +25,7 @@ public class UiTests {
     @Severity(SeverityLevel.BLOCKER)
     public void checkHeaderTest() {
         step("Open main page of the website", () -> {
-            open("https://reqres.in/");
+            open(url);
         });
         step("Find the header of the page", () -> {
             $(".tagline").shouldHave(text("Test your front-end against a real API"));
@@ -40,7 +40,7 @@ public class UiTests {
     @Severity(SeverityLevel.NORMAL)
     public void checkSupportButtonTest() {
         step("Open main page of the website", () -> {
-            open("https://reqres.in/");
+            open(url);
         });
         step("Click the support button", () -> {
             $(byText("Support ReqRes")).click();
@@ -60,7 +60,7 @@ public class UiTests {
     @ParameterizedTest(name = "Check if input of {0} is possible in support section")
     public void supportInputFieldTest(String inputQuery) {
         step("Open main page of the website", () -> {
-            open("https://reqres.in/");
+            open(url);
         });
         step("Set sum in the input field", () -> {
             $("[type=number]").setValue(inputQuery).pressEnter();
@@ -78,7 +78,7 @@ public class UiTests {
     @Test
     public void DeleteRequestAndResponseDescriptionTest() {
         step("Open main page of the website", () -> {
-            open("https://reqres.in/");
+            open(url);
         });
         step("Click on DELETE request in the list of request examples", () -> {
             $("[data-id=delete]").click();
@@ -96,7 +96,7 @@ public class UiTests {
     @Test
     public void checkConsoleErrors() {
         step("Open main page of the website", () -> {
-            open("https://reqres.in/");
+            open(url);
         });
         step("Open the console tab and check there are no issues", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
