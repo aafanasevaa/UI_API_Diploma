@@ -22,11 +22,9 @@ public class UiTests extends UiTestData {
     @Severity(SeverityLevel.BLOCKER)
     public void checkHeaderTest() {
         step("Open main page of the website", () -> {
-            open(url);
-        });
+            open(url); });
         step("Find the header of the page", () -> {
-            reqresIn.checkHeader();
-        });
+            reqresIn.checkHeader(); });
     }
 
     @Test
@@ -37,14 +35,11 @@ public class UiTests extends UiTestData {
     @Severity(SeverityLevel.NORMAL)
     public void checkSupportButtonTest() {
         step("Open main page of the website", () -> {
-            open(url);
-        });
+            open(url); });
         step("Click the support button", () -> {
-            reqresIn.clickSupportButton();
-        });
+            reqresIn.clickSupportButton(); });
         step("Check if support page is open", () -> {
-            reqresIn.checkSupportPage();
-        });
+            reqresIn.checkSupportPage(); });
     }
 
     @Disabled
@@ -57,14 +52,11 @@ public class UiTests extends UiTestData {
     @ParameterizedTest(name = "Check if input of {0} is possible in support section")
     public void supportInputFieldTest(String inputQuery) {
         step("Open main page of the website", () -> {
-            open(url);
-        });
+            open(url); });
         step("Set sum in the input field", () -> {
-            reqresIn.setSumInput(inputQuery);
-        });
+            reqresIn.setSumInput(inputQuery); });
         step("Check if the sum is displayed in the opened page", () -> {
-            reqresIn.checkNewPage(inputQuery);
-        });
+            reqresIn.checkNewPage(inputQuery); });
     }
 
     @DisplayName("Description of DELETE request should contain 204 status code in its response")
@@ -75,14 +67,11 @@ public class UiTests extends UiTestData {
     @Test
     public void DeleteRequestAndResponseDescriptionTest() {
         step("Open main page of the website", () -> {
-            open(url);
-        });
+            open(url); });
         step("Click on DELETE request in the list of request examples", () -> {
-            reqresIn.clickDeleteRequestButton();
-        });
+            reqresIn.clickDeleteRequestButton(); });
         step("Check if 204 status code is displayed in response field", () -> {
-            reqresIn.checkResponseStatusCode();
-        });
+            reqresIn.checkResponseStatusCode(); });
     }
 
     @DisplayName("Console tab verifying")
@@ -93,13 +82,11 @@ public class UiTests extends UiTestData {
     @Test
     public void checkConsoleErrors() {
         step("Open main page of the website", () -> {
-            open(url);
-        });
+            open(url); });
         step("Open the console tab and check there are no issues", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
             String errorText = "error";
-            assertThat(consoleLogs).doesNotContain(errorText);
-        });
+            assertThat(consoleLogs).doesNotContain(errorText); });
     }
 }
 

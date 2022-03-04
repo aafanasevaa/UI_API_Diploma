@@ -18,17 +18,14 @@ public interface ProjectConfig extends Config {
     @DefaultValue("1920x1080")
     String browserSize();
 
-    @Key("remoteUrl")
     @DefaultValue("")
     String remoteUrl();
 
-    @Key("videoStorage")
     @DefaultValue("")
     String videoStorage();
 
-    @Key("login")
     String login();
 
-    @Key("password")
     String password();
+
 }
