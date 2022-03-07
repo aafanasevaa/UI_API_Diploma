@@ -4,11 +4,11 @@
 ## :hammer_and_wrench: Technology stack:  
 <img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Java.png" width="60" height="60" /> ***Java*** — `object-oriented programming language`   
 <img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Selenide.jpg" width="60" height="60" /> ***Selenide*** — `testing framework powered by Selenium WebDriver`  
-<img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Gradle.png" width="60" height="55" /> ***Gradle*** — `a build automation tool for multi-language software development`  
-<img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Junit.png" width="55" height="50" />  ***Junit*** — `unit testing framework for the Java programming language`  
+<img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Gradle.png" width="60" height="60" /> ***Gradle*** — `a build automation tool for multi-language software development`  
+<img src="https://user-images.githubusercontent.com/93313607/157079979-8b8c967b-b25c-4563-a1e8-1857fac7530a.png" width="60" height="60" />  ***Junit*** — `unit testing framework for the Java programming language`  
 <img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Jenkins.jpg" width="60" height="50" /> ***Jenkins*** — `open source automation server`  
-<img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Rest-Assured.png" width="60" height="35" /> ***Rest-Assured*** — `Java-based library that is used to test RESTful Web Services`  
-<img src="https://github.com/aafanasyevaa/aafanasyevaa/blob/main/media/Allure.jpg" width="50" height="40" /> ***Allure*** — `Software Quality Management Platform`
+<img src="https://user-images.githubusercontent.com/93313607/157080106-2d2f6f6d-a969-44b3-bcbf-55743b63f0ae.png" width="60" height="55" /> ***Rest-Assured*** — `Java-based library that is used to test RESTful Web Services`  
+<img src="https://user-images.githubusercontent.com/93313607/157080256-bcf26a4c-51c6-45fb-bc69-d896719cc991.png" width="60" height="50" /> ***Allure*** — `Software Quality Management Platform`
 
 ***
 
